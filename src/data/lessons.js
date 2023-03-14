@@ -6,6 +6,7 @@ export const lessonsData = [
     url: "https://res.cloudinary.com/dws1ftsos/video/upload/v1678677221/8_Must_Know_JavaScript_Array_Methods_j0dn2f.mp4",
     notes: [
       {
+        id: 1,
         title: "Simple input",
         description: "Create a file using the simple input",
       },

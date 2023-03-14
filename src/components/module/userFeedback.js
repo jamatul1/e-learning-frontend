@@ -4,13 +4,15 @@ import React from "react";
 import ProgressBtn from "../button/progressBtn";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import UserRating from "./userRating";
+import { useModuleContext } from "@/contexts/moduleContext/moduleContext";
+import { LESSON_NEXT } from "@/contexts/moduleContext/moduleActions";
 
 export default function UserFeedback({
   lessonId,
-  handleNextLesson,
   handleLessonCompleted,
   completed,
 }) {
+  const { dispatch } = useModuleContext();
   return (
     <Box
       padding={3}
@@ -29,7 +31,14 @@ export default function UserFeedback({
       />
       <Button
         endIcon={<ArrowForwardIcon />}
-        onClick={() => handleNextLesson(lessonId)}
+        onClick={() => {
+          dispatch({
+            type: LESSON_NEXT,
+            payload: {
+              id: lessonId,
+            },
+          });
+        }}
         variant="outlined"
       >
         Next Lesson

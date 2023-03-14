@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import Lesson from "./lesson";
 
-export default function Lessons({ lessons, activeLesson, onLessonChange }) {
+export default function Lessons({ lessons, activeLesson }) {
   const [currentExpanded, setCurrentExpanded] = useState(null);
   const onLessonClick = (id) => {
     setCurrentExpanded(id);
@@ -14,7 +14,6 @@ export default function Lessons({ lessons, activeLesson, onLessonChange }) {
         <Lesson
           currentExpanded={currentExpanded}
           onLessonClick={onLessonClick}
-          onLessonChange={onLessonChange}
           activeLesson={activeLesson}
           key={lesson.id}
           lesson={lesson}

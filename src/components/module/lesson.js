@@ -15,15 +15,17 @@ import AssignmentLateIcon from "@mui/icons-material/AssignmentLate";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Grid, Typography } from "@mui/material";
 import { useEffect } from "react";
+import { useModuleContext } from "@/contexts/moduleContext/moduleContext";
+import { LESSON_CHANGE } from "@/contexts/moduleContext/moduleActions";
 export default function Lesson({
   lesson,
   onLessonClick,
-  onLessonChange,
   currentExpanded,
   activeLesson,
 }) {
   const [open, setOpen] = React.useState(false);
   const [active, setActive] = React.useState(false);
+  const { dispatch } = useModuleContext();
   useEffect(() => {
     if (currentExpanded != lesson.id) setOpen(false);
   }, [lesson.id, currentExpanded]);
@@ -40,7 +42,12 @@ export default function Lesson({
     setOpen(!open);
   };
   const handleLessonChange = (e) => {
-    onLessonChange(lesson.id);
+    dispatch({
+      type: LESSON_CHANGE,
+      payload: {
+        id: lesson.id,
+      },
+    });
   };
 
   function getRightIcon(type) {

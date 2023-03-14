@@ -8,11 +8,14 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import AddCardIcon from "@mui/icons-material/AddCard";
 import { useInput } from "@/hooks/useInput";
+import { useModuleContext } from "@/contexts/moduleContext/moduleContext";
+import { NOTE_NEW } from "@/contexts/moduleContext/moduleActions";
 
 export default function AddNote({ lessionId, handleNewNote }) {
   const [open, setOpen] = React.useState(false);
   const titleInput = useInput("");
   const descriptionInput = useInput("");
+  const { dispatch } = useModuleContext();
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -23,10 +26,23 @@ export default function AddNote({ lessionId, handleNewNote }) {
   const handleAdd = () => {
     setOpen(false);
     if (titleInput.value === "" || descriptionInput.value === "") return;
-    handleNewNote(lessionId, {
-      title: titleInput.value,
-      description: descriptionInput.value,
+    dispatch({
+      type: NOTE_NEW,
+      payload: {
+        id: lessionId,
+        note: {
+          title: titleInput.value,
+          description: descriptionInput.value,
+        },
+      },
     });
+    // handleNewNote(lessionId, {
+    //   title: titleInput.value,
+    //   description: descriptionInput.value,
+    // });
+
+    titleInput.reset();
+    descriptionInput.reset();
   };
 
   return (

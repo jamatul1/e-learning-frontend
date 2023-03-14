@@ -7,8 +7,12 @@ export const useInput = (initialValue) => {
     setValue(event.target.value);
   };
 
+  const reset = () => {
+    setValue("");
+  };
   return {
     value,
     onChange: handleChange,
+    reset,
   };
 };

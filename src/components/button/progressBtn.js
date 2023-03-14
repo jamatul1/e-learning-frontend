@@ -4,6 +4,8 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Button from "@mui/material/Button";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Typography } from "@mui/material";
+import { useModuleContext } from "@/contexts/moduleContext/moduleContext";
+import { LESSON_COMPLETED } from "@/contexts/moduleContext/moduleActions";
 
 export default function ProgressBtn({
   startLabel,
@@ -15,7 +17,7 @@ export default function ProgressBtn({
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(initialSuccess);
   const timer = React.useRef();
-
+  const { dispatch } = useModuleContext();
   React.useEffect(() => {
     return () => {
       clearTimeout(timer.current);
@@ -29,6 +31,7 @@ export default function ProgressBtn({
       timer.current = window.setTimeout(() => {
         setSuccess(true);
         onClick(lessonId);
+
         setLoading(false);
       }, 2000);
     }

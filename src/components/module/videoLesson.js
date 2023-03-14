@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import VideoJS from "../videoplayer";
 import AddNote from "./addNote";
 import UserFeedback from "./userFeedback";
@@ -13,6 +13,10 @@ export default function VideoLesson({
   handleLessonCompleted,
   handleNewNote,
 }) {
+  const [notes, setNotes] = useState([]);
+  useEffect(() => {
+    setNotes(lesson.notes);
+  }, [setNotes, lesson.notes]);
   const playerRef = React.useRef(null);
 
   const videoJsOptions = {
@@ -64,7 +68,7 @@ export default function VideoLesson({
         Notes
       </Typography>
       <Grid sx={{ p: 3 }} container spacing={1}>
-        {lesson.notes.map((note, key) => {
+        {notes.map((note, key) => {
           return (
             <Grid key={key} item xs={3}>
               <VideoNote note={note}></VideoNote>

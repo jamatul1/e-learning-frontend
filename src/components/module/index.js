@@ -12,27 +12,23 @@ import { lessonsData } from "@/data/lessons";
 import RadioGroupRating from "../radioGroup";
 import Transcript from "./transcript";
 import ProgressBtn from "../button/progressBtn";
+import { useModuleContext } from "@/contexts/moduleContext/moduleContext";
+import {
+  GET_MODULE,
+  LESSON_COMPLETED,
+} from "@/contexts/moduleContext/moduleActions";
 
-function chooseLessonComp(
-  type,
-  lesson,
-  handleNextLesson,
-  handleLessonCompleted,
-  handleNewNote
-) {
+function chooseLessonComp(type, lesson, handleLessonCompleted) {
   if (type == "video")
     return (
       <VideoLesson
-        handleNextLesson={handleNextLesson}
         handleLessonCompleted={handleLessonCompleted}
-        handleNewNote={handleNewNote}
         lesson={lesson}
       ></VideoLesson>
     );
   if (type == "text")
     return (
       <ArticleLesson
-        handleNextLesson={handleNextLesson}
         handleLessonCompleted={handleLessonCompleted}
         lesson={lesson}
       />
@@ -40,7 +36,6 @@ function chooseLessonComp(
   if (type == "download")
     return (
       <DownloadFile
-        handleNextLesson={handleNextLesson}
         handleLessonCompleted={handleLessonCompleted}
         lesson={lesson}
       />
@@ -48,7 +43,6 @@ function chooseLessonComp(
   if (type == "assignment")
     return (
       <Assignment
-        handleNextLesson={handleNextLesson}
         handleLessonCompleted={handleLessonCompleted}
         lesson={lesson}
       />
@@ -61,37 +55,26 @@ const Item = styled(Paper)(({ theme }) => ({
   lineHeight: "60px",
 }));
 
-export default function Module() {
-  const [lessons, setLessons] = useState([]);
-  const [currentLesson, setCurrentLesson] = useState(1);
+export default function Module({ id }) {
+  let { lessons, currentLesson, dispatch } = useModuleContext();
   useEffect(() => {
-    setLessons(lessonsData);
+    dispatch({
+      type: GET_MODULE,
+      payload: {
+        id,
+      },
+    });
   }, []);
-  function onLessonChange(lessonId) {
-    setCurrentLesson(lessonId);
-  }
+
   function onLessonCompleted(lessonId) {
-    let modifiedLessons = [...lessons];
-    modifiedLessons.filter((l) => l.id === lessonId)[0].completed = true;
-    setLessons(modifiedLessons);
-  }
-  function onNextLesson(lessonId) {
-    if (lessonId < lessons.length) {
-      setCurrentLesson(lessonId + 1);
-    } else {
-      setCurrentLesson(1);
-    }
-  }
-  function getCurrentLesson() {
-    return lessons.length !== 0 && lessons[currentLesson - 1];
+    dispatch({
+      type: LESSON_COMPLETED,
+      payload: {
+        id: lessonId,
+      },
+    });
   }
 
-  function onNewNote(lessonId, note) {
-    console.log(note);
-    let modifiedLessons = [...lessons];
-    modifiedLessons.filter((l) => l.id === lessonId)[0].notes.push(note);
-    setLessons(modifiedLessons);
-  }
   return (
     <div role={"presentation"}>
       <Grid container spacing={2}>
@@ -103,14 +86,12 @@ export default function Module() {
               position: "fixed",
               width: 365,
             }}
-            elevation="0"
+            elevation={0}
           >
             <ModuleBreadcrumbs></ModuleBreadcrumbs>
-            <Lessons
-              onLessonChange={onLessonChange}
-              activeLesson={currentLesson}
-              lessons={lessons}
-            />
+            {lessons && currentLesson && (
+              <Lessons activeLesson={currentLesson.id} lessons={lessons} />
+            )}
           </Paper>
         </Grid>
         <Grid item xs={7}>
@@ -120,15 +101,14 @@ export default function Module() {
               borderRadius: 2,
               overflow: "hidden",
             }}
-            elevation="0"
+            elevation={0}
           >
             {lessons.length !== 0 &&
+              currentLesson &&
               chooseLessonComp(
-                getCurrentLesson().type,
-                getCurrentLesson(),
-                onNextLesson,
-                onLessonCompleted,
-                onNewNote
+                currentLesson.type,
+                currentLesson,
+                onLessonCompleted
               )}
           </Paper>
         </Grid>
@@ -137,11 +117,12 @@ export default function Module() {
             sx={{
               mt: 10,
             }}
-            elevation="0"
+            elevation={0}
           >
-            {getCurrentLesson().type === "video" &&
-              (getCurrentLesson().transcript ? (
-                <Transcript text={getCurrentLesson().transcript} />
+            {currentLesson &&
+              currentLesson.type === "video" &&
+              (currentLesson.transcript ? (
+                <Transcript text={currentLesson.transcript} />
               ) : (
                 "This lesson has no transcript"
               ))}
