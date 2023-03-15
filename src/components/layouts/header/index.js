@@ -14,7 +14,9 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import SchoolIcon from "@mui/icons-material/School";
+import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import { Avatar } from "@mui/material";
+import Navbar from "./navBar";
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -131,11 +133,13 @@ export default function Header() {
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block", pl: "10px" } }}
+            sx={{ display: "flex", alignItems: "center" }}
           >
-            <SchoolIcon />
+            <AccountTreeIcon sx={{ mr: 1 }} /> Remotely
           </Typography>
+
           <Box sx={{ flexGrow: 1 }} />
+          <Navbar />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"

@@ -5,12 +5,17 @@ import styles from "@/styles/Home.module.css";
 import { useEffect } from "react";
 import { useTheme } from "@mui/material";
 import AlertDialog from "@/components/alert";
+import Showcase from "@/components/home/showcase";
+import Advertise from "@/components/home/advertise";
+import OurCourses from "@/components/home/ourCourses";
+import Companies from "@/components/home/companies";
+import { courses } from "@/data/courses";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   let theme = useTheme();
-  console.log(theme.palette);
+  console.log(courses);
   return (
     <>
       <Head>
@@ -25,9 +30,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.description}>
-          <AlertDialog></AlertDialog>
-        </div>
+        <Showcase />
+        <Advertise />
+        <OurCourses />
       </main>
     </>
   );
