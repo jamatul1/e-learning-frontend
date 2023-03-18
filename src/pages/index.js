@@ -1,15 +1,14 @@
 import Head from "next/head";
-import Image from "next/image";
+
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { useEffect } from "react";
+
 import { useTheme } from "@mui/material";
-import AlertDialog from "@/components/alert";
+
 import Showcase from "@/components/home/showcase";
 import Advertise from "@/components/home/advertise";
 import OurCourses from "@/components/home/ourCourses";
-import Companies from "@/components/home/companies";
-import { courses } from "@/data/courses";
+
 import Student from "@/components/home/students";
 
 const inter = Inter({ subsets: ["latin"] });
