@@ -15,7 +15,7 @@ export default function Description({ course }) {
           <Typography fontWeight={300} sx={{ mb: 2 }}>
             Created At : {format(course.createdAt, "MMMM-yyyy")}
           </Typography>
-          <Typography sx={{ mb: 1 }}>Created by -</Typography>
+          <Typography sx={{ mb: 1 }}>Authors -</Typography>
           <Box sx={{ display: "flex", gap: 2 }}>
             {course.authors.map((a, i) => (
               <Box
@@ -28,13 +28,6 @@ export default function Description({ course }) {
               >
                 <Avatar sx={{ mb: 1 }} alt="instructor" src={a.avatar}></Avatar>
                 <Box sx={{ display: "flex" }}>
-                  <Typography
-                    color={"#bcbcbc"}
-                    sx={{ mr: 1 }}
-                    component={"span"}
-                  >
-                    Author :
-                  </Typography>
                   <Typography> {a.username}</Typography>
                 </Box>
               </Box>

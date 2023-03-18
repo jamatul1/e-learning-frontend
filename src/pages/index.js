@@ -10,12 +10,12 @@ import Advertise from "@/components/home/advertise";
 import OurCourses from "@/components/home/ourCourses";
 import Companies from "@/components/home/companies";
 import { courses } from "@/data/courses";
+import Student from "@/components/home/students";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   let theme = useTheme();
-  console.log(courses);
   return (
     <>
       <Head>
@@ -33,6 +33,7 @@ export default function Home() {
         <Showcase />
         <Advertise />
         <OurCourses />
+        <Student />
       </main>
     </>
   );
