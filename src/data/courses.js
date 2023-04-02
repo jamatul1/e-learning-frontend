@@ -98,8 +98,12 @@ function createCourse(id, title, imgUrl, price) {
       },
     ],
     description: `
+    <h2>About this course</h2>
 <p>
-  <strong style="font-size: large;">Features</strong>
+This course is designed to provide a comprehensive introduction to the field of digital marketing. Students will learn the basic concepts and principles of digital marketing and how to create and implement effective digital marketing strategies. The course will cover a range of topics, including social media marketing, search engine optimization, email marketing, content marketing, and mobile marketing.</p>
+<h2>Course Format</h2>
+<p>
+The course will be delivered online through a combination of pre-recorded video lectures, readings, and interactive assignments. Students will be able to access the course material at their own pace and will be required to complete quizzes and assignments to demonstrate their understanding of the concepts taught in each module. There will also be opportunities for students to engage in discussion forums and receive feedback from instructors.
 </p>
 <ul>
   <li>Fast and lightweight</li>

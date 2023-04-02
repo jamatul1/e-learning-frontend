@@ -8,8 +8,8 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import InfoIcon from "@mui/icons-material/Info";
-import CastForEducationIcon from "@mui/icons-material/CastForEducation";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import PaymentOutlinedIcon from "@mui/icons-material/PaymentOutlined";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
@@ -18,11 +18,11 @@ const drawerWidth = 300;
 const drawerList = [
   {
     label: `Description`,
-    Icon: <InfoIcon />,
+    Icon: <InfoOutlinedIcon />,
   },
   {
     label: `Module's`,
-    Icon: <CastForEducationIcon />,
+    Icon: <PaymentOutlinedIcon />,
   },
   {
     label: `Syllabus`,
@@ -47,9 +47,11 @@ export default function CourseDrawer({ onClick }) {
         "& .MuiDrawer-paper": {
           width: drawerWidth,
           boxSizing: "border-box",
-          mt: 10,
+          mt: 24.5,
+          mx: 8,
           borderRadius: 2,
-          borderRight: "none",
+          // borderRight: "none",
+          border: "1px solid #eee",
         },
       }}
       variant="permanent"
@@ -64,7 +66,16 @@ export default function CourseDrawer({ onClick }) {
               }}
             >
               <ListItemIcon>{d.Icon}</ListItemIcon>
-              <ListItemText primary={d.label} />
+              <ListItemText
+                sx={{
+                  fontSize: 20,
+                  ".css-10hburv-MuiTypography-root": {
+                    fontSize: 20,
+                    color: (t) => t.palette.dg,
+                  },
+                }}
+                primary={d.label}
+              />
             </ListItemButton>
           </ListItem>
         ))}

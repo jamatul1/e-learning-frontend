@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Grid, Paper } from "@mui/material";
+import { Box, Grid, Paper } from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import ArticleLesson from "./articleLesson";
@@ -76,12 +76,12 @@ export default function Module({ id }) {
   }
 
   return (
-    <div role={"presentation"}>
-      <Grid container spacing={2}>
+    <Box sx={{ px: 5 }}>
+      <Grid container spacing={3}>
         <Grid item xs={3}>
           <Paper
             sx={{
-              mt: 10,
+              mt: 15,
               borderRadius: 2,
               position: "fixed",
               width: 365,
@@ -97,7 +97,8 @@ export default function Module({ id }) {
         <Grid item xs={7}>
           <Paper
             sx={{
-              mt: 10,
+              mt: 15,
+              ml: 3,
               borderRadius: 2,
               overflow: "hidden",
             }}
@@ -115,7 +116,7 @@ export default function Module({ id }) {
         <Grid item xs={2}>
           <Item
             sx={{
-              mt: 10,
+              mt: 15,
             }}
             elevation={0}
           >
@@ -129,6 +130,6 @@ export default function Module({ id }) {
           </Item>
         </Grid>
       </Grid>
-    </div>
+    </Box>
   );
 }

@@ -29,7 +29,7 @@ export default function Course() {
   };
 
   return (
-    <Box sx={{ display: "flex", gap: 2 }}>
+    <Box sx={{ ml: 7, display: "flex", gap: 2 }}>
       <CourseDrawer onClick={handleChange} />
       <Paper elevation={0} sx={{ mt: 10 }}>
         {getSubCourseComp(selected, course)}

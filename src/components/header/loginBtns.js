@@ -11,15 +11,15 @@ export default function LoginBtns() {
       <Button
         onClick={() => router.push("/signin")}
         startIcon={<LoginIcon />}
-        variant="outlined"
-        sx={{ mr: 2 }}
+        variant="contained"
+        sx={{ mr: 2, bgColor: (t) => t.palette.secondary.main }}
       >
         Sign In
       </Button>
       <Button
         onClick={() => router.push("/signup")}
         startIcon={<InputIcon />}
-        variant="outlined"
+        variant="contained"
       >
         Sign Up
       </Button>

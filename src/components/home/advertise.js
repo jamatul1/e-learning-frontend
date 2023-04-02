@@ -7,8 +7,8 @@ import React from "react";
 export default function Advertise() {
   const router = useRouter();
   return (
-    <Paper elevation={0} sx={{ mt: 20, p: 5 }}>
-      <Grid container sx={{ p: 5 }}>
+    <Paper elevation={0} sx={{ ml: 10, mt: 29, p: 5 }}>
+      <Grid container spacing={10} sx={{ p: 5 }}>
         <Grid sm={6} item>
           <Typography variant="h2">Find the best online courses</Typography>
           <Typography fontSize={28} fontWeight={300} variant="body1">
@@ -16,8 +16,9 @@ export default function Advertise() {
           </Typography>
           <Button
             onClick={() => router.push("/courses")}
-            sx={{ mt: 15 }}
-            variant="outlined"
+            sx={{ mt: 11, px: 10, py: 1.5 }}
+            size="large"
+            variant="contained"
           >
             {" "}
             Browse now
@@ -25,8 +26,8 @@ export default function Advertise() {
         </Grid>
         <Grid sm={6} item>
           <Image
-            height={340}
-            width={200}
+            height={440}
+            width={350}
             src={"./imgs/advertisement1.svg"}
           ></Image>
         </Grid>

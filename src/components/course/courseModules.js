@@ -9,8 +9,14 @@ export default function CourseModules({ data }) {
 
   return (
     <Wrapper>
-      <Typography variant="h2" sx={{ mb: 2 }} fontSize={32}>
-        Modules
+      <Typography
+        color={(t) => t.palette.dg}
+        fontWeight={500}
+        variant="h2"
+        sx={{ mb: 5 }}
+        fontSize={32}
+      >
+        Course Modules
       </Typography>
       {data && (
         <CustomizedAccordions

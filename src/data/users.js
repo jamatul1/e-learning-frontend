@@ -7,7 +7,7 @@ export function createUser(id, firstname, lastname, email, role) {
     email,
     password: "jamatul542",
     role,
-    avatar: "/imgs/courses/course2.png",
+    avatar: "/imgs/avatar.webp",
     enrolledCourses: [],
     completedCourses: [],
     currentCourses: [],

@@ -1,13 +1,15 @@
 import { courses } from "@/data/courses";
-import { Paper, Typography } from "@mui/material";
+import { Paper, Rating, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import Authors from "./authors";
 import CourseTabs from "./courseTabs";
 import Description from "./description";
 import styled from "@emotion/styled";
 import Syllabus from "./syllabus";
+import SideBar from "./sideBar";
+import InstrcutorCard from "@/components/cards/instructorCard";
+import CourseReview from "@/components/review/courseReview";
 const FixedButton = styled.button`
   position: fixed;
   right: 14rem;
@@ -23,16 +25,12 @@ const FixedButton = styled.button`
 export default function CourseDetails() {
   const router = useRouter();
   const { cid } = router.query;
-  const [currentTab, setCurrentTab] = useState(0);
   const [course, setCourse] = useState(null);
   useEffect(() => {
     let c = courses.filter((c) => c.id == cid)[0];
     setCourse(c);
   }, []);
 
-  const handleChangeTab = (newTabValue) => {
-    setCurrentTab(newTabValue);
-  };
   return (
     <Box
       sx={{
@@ -40,19 +38,49 @@ export default function CourseDetails() {
         mt: 7,
       }}
     >
-      <FixedButton onClick={() => router.push("/course")}>
-        Enroll Now!
-      </FixedButton>
-      <Paper sx={{ width: "100%" }}>
-        <CourseTabs value={currentTab} handleChangeTab={handleChangeTab} />
-        <Box sx={{ width: "70%", m: "auto" }}>
-          <Paper sx={{ pt: 10 }}>
-            {currentTab === 0 && course && <Description course={course} />}
-            {currentTab === 1 && <Authors />}
-            {currentTab === 2 && course && <Syllabus course={course} />}
+      <Box
+        sx={{
+          position: "fixed",
+          top: 160,
+          right: 150,
+        }}
+      >
+        <SideBar />
+      </Box>
+      <Box elevation={0} sx={{ width: "80%" }}>
+        <Box sx={{ width: "70%", mx: 20 }}>
+          <Paper elevation={0} sx={{ pt: 10 }}>
+            {course && <Description course={course} />}
           </Paper>
+
+          <Box sx={{ width: "70%", my: 10 }}>
+            <Box sx={{ mb: 4 }}>
+              <Typography
+                color={(t) => t.palette.dg}
+                fontWeight={"bold"}
+                variant="h4"
+              >
+                2 Reviews
+              </Typography>
+              <Rating sx={{ fontSize: 32 }} readOnly value={5} />
+            </Box>
+            <CourseReview />
+            <CourseReview />
+          </Box>
+          <Box sx={{ width: "34%" }}>
+            <Typography
+              color={(t) => t.palette.dg}
+              fontWeight={"bold"}
+              sx={{ mb: 2 }}
+              variant="h4"
+            >
+              {" "}
+              Course Instructor{" "}
+            </Typography>
+            <InstrcutorCard />
+          </Box>
         </Box>
-      </Paper>
+      </Box>
     </Box>
   );
 }

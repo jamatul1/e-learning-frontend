@@ -11,7 +11,7 @@ const pages = [
 export default function LargeScreenNav() {
   const router = useRouter();
   return (
-    <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+    <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
       {pages.map((page) => (
         <Button
           onClick={() => router.push(page.url)}

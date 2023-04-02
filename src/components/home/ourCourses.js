@@ -8,7 +8,7 @@ import CourseCard from "../cards/courseCard";
 export default function OurCourses() {
   const router = useRouter();
   return (
-    <Paper elevation={0} sx={{ mt: 20, p: 5 }}>
+    <Paper elevation={0} sx={{ mt: 20, mb: 20, p: 5 }}>
       <Typography sx={{ mb: 5 }} variant="h2">
         People {"found"} these {" course's"} life changing
       </Typography>

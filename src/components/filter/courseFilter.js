@@ -1,10 +1,11 @@
 import { Box } from "@mui/system";
 import React from "react";
 import BasicSelect from "./select";
+import PriceSlider from "../slider/priceSlider";
 
 export default function CourseFilter() {
   return (
-    <Box sx={{ display: "flex", gap: 2 }}>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       <BasicSelect
         label="Free or Paid"
         value={"freeandpaid"}
@@ -14,6 +15,7 @@ export default function CourseFilter() {
           { value: "paid", label: "Paid" },
         ]}
       />
+      <PriceSlider />
       <BasicSelect
         label="Catagories"
         value={"all"}
@@ -32,6 +34,16 @@ export default function CourseFilter() {
           { value: "computerscience", label: "Computer Science" },
           { value: "math", label: "Math" },
           { value: "physics", label: "Physics" },
+        ]}
+      />
+      <BasicSelect
+        label="Labels"
+        value={"all"}
+        menus={[
+          { value: "all", label: "All" },
+          { value: "beginner", label: "Beginner" },
+          { value: "intermediate", label: "Intermediate" },
+          { value: "advanced", label: "Advanced" },
         ]}
       />
     </Box>

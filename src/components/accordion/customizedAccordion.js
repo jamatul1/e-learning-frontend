@@ -5,15 +5,16 @@ import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
+import ModuleProgress from "../progress/moduleProgress";
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  "&:not(:last-child)": {
-    borderBottom: 0,
-  },
+  border: `1px solid ${theme.palette.lg}`,
+  borderRadius: 5,
+  marginBottom: 10,
+  "&:not(:last-child)": {},
   "&:before": {
     display: "none",
   },
@@ -28,7 +29,7 @@ const AccordionSummary = styled((props) => (
   backgroundColor:
     theme.palette.mode === "dark"
       ? "rgba(255, 255, 255, .05)"
-      : "rgba(0, 0, 0, .03)",
+      : "rgba(0, 0, 0, .00)",
   flexDirection: "row-reverse",
   "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
     transform: "rotate(90deg)",
@@ -58,11 +59,34 @@ export default function CustomizedAccordion({
   return (
     <Accordion expanded={expanded === title} onChange={handleChange(title)}>
       <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-        <Typography>{title}</Typography>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Typography
+            fontSize={18}
+            fontWeight={400}
+            color={(t) => t.palette.g}
+            variant="h6"
+          >
+            {title}
+          </Typography>
+          <ModuleProgress />
+        </Box>
       </AccordionSummary>
       <AccordionDetails>
         <Typography>{description}</Typography>
-        <Button onClick={() => handleStart(id)}>Start Now!</Button>
+        <Button
+          variant="outlined"
+          sx={{ mt: 2 }}
+          onClick={() => handleStart(id)}
+        >
+          Start Now
+        </Button>
       </AccordionDetails>
     </Accordion>
   );

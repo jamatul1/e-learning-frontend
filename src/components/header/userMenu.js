@@ -21,7 +21,7 @@ export default function UserMenu() {
     setAnchorElUser(null);
   };
   return (
-    <Box sx={{ flexGrow: 0 }}>
+    <Box sx={{ flexGrow: 0, ml: 3 }}>
       <Tooltip title="Open settings">
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
           <Avatar alt="Remy Sharp" src="/imgs/avatar.webp" />

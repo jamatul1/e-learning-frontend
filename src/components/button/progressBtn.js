@@ -46,7 +46,7 @@ export default function ProgressBtn({
       >
         {!success && startLabel}
         {success && <CheckCircleIcon color="success" sx={{ mr: 1 }} />}
-        {success && <Typography sx={{ color: "white" }}>{endLabel}</Typography>}
+        {success && <Typography>{endLabel}</Typography>}
       </Button>
       {loading && (
         <CircularProgress

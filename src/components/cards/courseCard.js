@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import { useRouter } from "next/router";
 import CourseRating from "../rating";
 import { Box } from "@mui/system";
-import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import { Rating } from "@mui/material";
 
 export default function CourseCard({
   title,
@@ -19,16 +19,23 @@ export default function CourseCard({
 }) {
   const router = useRouter();
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, maxHeight: 360, p: 1 }}>
       <CardMedia
         component="img"
         alt="green iguana"
         height="140"
+        sx={{ borderRadius: 1 }}
         image={imgUrl}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {title}
+        <Typography
+          color={(t) => t.palette.dg}
+          fontWeight={700}
+          gutterBottom
+          variant="h5"
+          component="div"
+        >
+          {title.length > 40 ? title.slice(0, 39) + "..." : title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {description}
@@ -42,15 +49,26 @@ export default function CourseCard({
             justifyContent: "space-between",
           }}
         >
-          <Button size="small" onClick={() => router.push("/" + url)}>
-            Learn more
+          <Button
+            variant="contained"
+            size="small"
+            onClick={() => router.push("/" + url)}
+          >
+            View Course
           </Button>
-          <Box sx={{}}>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1, ml: 5 }}>
-              <PeopleAltIcon />
-              <Typography variant="body2">2666</Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <Typography fontSize={14} variant="body2">
+                Price : 199$
+              </Typography>
             </Box>
-            <CourseRating value={rating} />
+            <Rating readOnly sx={{ fontSize: 16 }} value={5} />
           </Box>
         </Box>
       </CardActions>

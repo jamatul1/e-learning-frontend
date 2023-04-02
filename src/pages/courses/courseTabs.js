@@ -20,7 +20,7 @@ const StyledTabs = styled((props) => (
   "& .MuiTabs-indicator": {
     display: "flex",
     justifyContent: "center",
-    backgroundColor: "transparent",
+    // backgroundColor: "transparent",
   },
   "& .MuiTabs-indicatorSpan": {
     maxWidth: 40,

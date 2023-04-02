@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 
 export default function CourseRating({
   type = "readable",
-  value = 0,
+  value = 4,
   handleRatingChange = () => {},
 }) {
   console.log(type);
@@ -30,7 +30,9 @@ export default function CourseRating({
       {type === "readable" && value === 0 && (
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Rating disabled name="no-value" value={null} />
-          <Typography sx={{ ml: 2 }}>No Rating is Yet</Typography>
+          <Typography sx={{ ml: 2, color: (theme) => theme.palette.g }}>
+            No Rating is Yet
+          </Typography>
         </Box>
       )}
     </Box>
