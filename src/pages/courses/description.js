@@ -8,11 +8,12 @@ import { format, formatRelative } from "date-fns";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import CourseAdVideoPlayer from "@/components/videoplayer/courseAdPlayer";
-
+import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
+import PlayLessonOutlinedIcon from "@mui/icons-material/PlayLessonOutlined";
 export default function Description({ course }) {
   return (
     <Box>
-      <Typography fontWeight={"bold"} variant="h3">
+      <Typography fontSize={46} fontWeight={"bold"} variant="h3">
         {course.title}
       </Typography>
       <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
@@ -43,16 +44,16 @@ export default function Description({ course }) {
       <Box sx={{ display: "flex", gap: 3, mt: 5, mb: 5 }}>
         <CourseRating
           type="readable"
-          value={course.ratings.length !== 0 ? course.ratings.length : 0}
+          value={course.ratings.length !== 0 ? course.ratings.length : 5}
         />
         <Box sx={{ display: "flex", gap: 1 }}>
-          <AssignmentTurnedInIcon color="primary" />
+          <PlayLessonOutlinedIcon color="primary" />
           <Typography color={(theme) => theme.palette.g} variant="body1">
             Total Lessons : 20
           </Typography>
         </Box>
         <Box sx={{ display: "flex", gap: 1 }}>
-          <AssignmentTurnedInIcon color="primary" />
+          <AssignmentOutlinedIcon color="primary" />
           <Typography color={(theme) => theme.palette.g} variant="body1">
             Assignment : 3
           </Typography>
@@ -64,11 +65,13 @@ export default function Description({ course }) {
           </Typography>
         </Box>
       </Box>
-      <CourseAdVideoPlayer
-        url={
-          "https://res.cloudinary.com/dws1ftsos/video/upload/v1678677221/8_Must_Know_JavaScript_Array_Methods_j0dn2f.mp4"
-        }
-      />
+      <Box sx={{ mb: 10 }}>
+        <CourseAdVideoPlayer
+          url={
+            "https://res.cloudinary.com/dws1ftsos/video/upload/v1678677221/8_Must_Know_JavaScript_Array_Methods_j0dn2f.mp4"
+          }
+        />
+      </Box>
       {/* <Image
         width={300}
         height={400}

@@ -11,6 +11,7 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import { AccountTreeTwoTone } from "@mui/icons-material";
 
 export default function SignUp() {
   const handleSubmit = (event) => {
@@ -27,16 +28,19 @@ export default function SignUp() {
       <CssBaseline />
       <Box
         sx={{
-          marginTop: 16,
+          marginTop: 20,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           height: "90vh",
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
+        {/* <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
           <LockOutlinedIcon />
-        </Avatar>
+        </Avatar> */}
+        <Box sx={{ mb: 0 }}>
+          <AccountTreeTwoTone />
+        </Box>
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
@@ -101,7 +105,7 @@ export default function SignUp() {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/signin" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>

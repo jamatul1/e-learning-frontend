@@ -53,7 +53,7 @@ function createCourse(id, title, imgUrl, price) {
         no: 2,
         title: "The Javascript Fundementals",
         description:
-          "In the internet browser is the only thing that we used frequenty. To access internet we need to use browser. So we cover's everything about browser.",
+          "Javascript is the language of the browser. It allows us to make interactive in the web.",
         lessons: lessonsData,
       },
       {
@@ -67,33 +67,33 @@ function createCourse(id, title, imgUrl, price) {
       {
         id: 4,
         no: 4,
-        title: "The Browser",
+        title: "Object Oriented Javascript",
         description:
-          "In the internet browser is the only thing that we used frequenty. To access internet we need to use browser. So we cover's everything about browser.",
+          "Object orietend javascript is everywhere. To access internet we need to use browser. So we cover's everything about browser.",
         lessons: lessonsData,
       },
       {
         id: 5,
         no: 5,
-        title: "The Browser",
+        title: "Aynchonus Javascript",
         description:
-          "In the internet browser is the only thing that we used frequenty. To access internet we need to use browser. So we cover's everything about browser.",
+          "Javascript is a single threaded language but allows us to do multiple things at teh same time. To access internet we need to use browser. So we cover's everything about browser.",
         lessons: lessonsData,
       },
       {
         id: 6,
         no: 6,
-        title: "The Browser",
+        title: "The HTTP",
         description:
-          "In the internet browser is the only thing that we used frequenty. To access internet we need to use browser. So we cover's everything about browser.",
+          "Http is the only thing that we used frequenty. To access internet we need to use browser. So we cover's everything about browser.",
         lessons: lessonsData,
       },
       {
         id: 7,
         no: 7,
-        title: "The Browser",
+        title: "The Node.js",
         description:
-          "In the internet browser is the only thing that we used frequenty. To access internet we need to use browser. So we cover's everything about browser.",
+          "Nodejs is everything in peoples eyes. To access internet we need to use browser. So we cover's everything about browser.",
         lessons: lessonsData,
       },
     ],
@@ -105,23 +105,26 @@ This course is designed to provide a comprehensive introduction to the field of 
 <p>
 The course will be delivered online through a combination of pre-recorded video lectures, readings, and interactive assignments. Students will be able to access the course material at their own pace and will be required to complete quizzes and assignments to demonstrate their understanding of the concepts taught in each module. There will also be opportunities for students to engage in discussion forums and receive feedback from instructors.
 </p>
+<h2>What you will learn ?</h2>
 <ul>
-  <li>Fast and lightweight</li>
-  <li>Semantic markup</li>
-  <li>Standardized HTML between browsers</li>
-  <li>Cross browser support including Chrome, Firefox, Safari, and IE 9+</li>
+  <li>The basic of Internet</li>
+  <li>Html</li>
+  <li>Css3</li>
+  <li>Javascript</li>
+  <li>Node.js</li>
+  <li>Document Object Model</li>
+  <li>Canvas</li>
+  <li>Responsive Web Design and many more</li>
 </ul>
 <p>
   <br>
 </p>
-<p>
-  <strong style="font-size: large;">Audience</strong>
-</p>
+<h2>Requirements</h2>
 <ul>
   <li>
-      <a href="https://quilljs.com" target="_blank">Quill.js</a>, the free, open source WYSIWYG editor</li>
+      Basic knowledge about computer</li>
   <li>
-      <a href="https://zenoamaro.github.io/react-quill" target="_blank">React-quill</a>, a React component that wraps Quill.js</li>
+      A Laptop and that's it.</li>
 </ul>`,
     shortDescription:
       "This course will teach you fundemental of the all parts in the respected field",
@@ -129,72 +132,17 @@ The course will be delivered online through a combination of pre-recorded video 
 <strong style="font-size: large;">You don't need to study hard here</strong>
 </p>
 
-<ul>
-<li>Javascript</li>
-<li>CSs</li>
-<li>Standardized HTML between browsers</li>
-<li>Cross browser support including Chrome, Firefox, Safari, and IE 9+</li>
-</ul>
-<p>
-<strong style="font-size: large;">Audience</strong>
-</p>
-<ul>
-<li>
-    <a href="https://quilljs.com" target="_blank">Quill.js</a>, the free, open source WYSIWYG editor</li>
-<li>
-    <a href="https://zenoamaro.github.io/react-quill" target="_blank">React-quill</a>, a React component that wraps Quill.js</li>
-</ul></p>
-<p>
-<strong style="font-size: large;">You don't need to study hard here</strong>
 </p>
 
-<ul>
-<li>Javascript</li>
-<li>CSs</li>
-<li>Standardized HTML between browsers</li>
-<li>Cross browser support including Chrome, Firefox, Safari, and IE 9+</li>
-</ul>
-<p>
-<strong style="font-size: large;">Audience</strong>
-</p>
-<ul>
-<li>
-    <a href="https://quilljs.com" target="_blank">Quill.js</a>, the free, open source WYSIWYG editor</li>
-<li>
-    <a href="https://zenoamaro.github.io/react-quill" target="_blank">React-quill</a>, a React component that wraps Quill.js</li>
-</ul></p>
-<p>
-<strong style="font-size: large;">You don't need to study hard here</strong>
-</p>
 
-<ul>
-<li>Javascript</li>
-<li>CSs</li>
-<li>Standardized HTML between browsers</li>
-<li>Cross browser support including Chrome, Firefox, Safari, and IE 9+</li>
-</ul>
-<p>
-<strong style="font-size: large;">Audience</strong>
-</p>
-<ul>
-<li>
-    <a href="https://quilljs.com" target="_blank">Quill.js</a>, the free, open source WYSIWYG editor</li>
-<li>
-    <a href="https://zenoamaro.github.io/react-quill" target="_blank">React-quill</a>, a React component that wraps Quill.js</li>
-</ul></p>`,
+
+</p>`,
     authors: [
       createUser(
         Date.now() + Math.random() * 1000 + id,
         "Jon",
         "Doe",
         "jondeo@gmail.com",
-        "teacher"
-      ),
-      createUser(
-        Date.now() + Math.random() * 1000 + id,
-        "Duke",
-        "Me",
-        "dukeme@gmail.com",
         "teacher"
       ),
     ],

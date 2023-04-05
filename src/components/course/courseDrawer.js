@@ -13,6 +13,7 @@ import PaymentOutlinedIcon from "@mui/icons-material/PaymentOutlined";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import { PeopleAltOutlined } from "@mui/icons-material";
 
 const drawerWidth = 300;
 const drawerList = [
@@ -34,7 +35,7 @@ const drawerList = [
   },
   {
     label: `Author's`,
-    Icon: <PeopleAltIcon />,
+    Icon: <PeopleAltOutlined />,
   },
 ];
 
@@ -51,7 +52,7 @@ export default function CourseDrawer({ onClick }) {
           mx: 8,
           borderRadius: 2,
           // borderRight: "none",
-          border: "1px solid #eee",
+          border: (t) => `1px solid ${t.palette.border}`,
         },
       }}
       variant="permanent"
@@ -70,8 +71,9 @@ export default function CourseDrawer({ onClick }) {
                 sx={{
                   fontSize: 20,
                   ".css-10hburv-MuiTypography-root": {
-                    fontSize: 20,
-                    color: (t) => t.palette.dg,
+                    fontSize: 16,
+                    fontWeight: 500,
+                    color: (t) => t.palette.g,
                   },
                 }}
                 primary={d.label}

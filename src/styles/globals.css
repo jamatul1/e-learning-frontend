@@ -38,7 +38,7 @@ li {
 }
 h2 {
   font-size: 32px;
-  letter-spacing: 0.6px;
+
   margin: 0.5em 0;
   color: #313131;
 }
@@ -49,4 +49,6 @@ ul {
 p {
   margin-bottom: 3em;
   color: #636363;
+  letter-spacing: 0.7px;
+  line-height: 1.7;
 }

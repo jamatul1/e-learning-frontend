@@ -25,7 +25,12 @@ export default function CourseRating({
         />
       )}
       {type === "readable" && value !== 0 && (
-        <Rating name="read-only" value={value} readOnly />
+        <>
+          <Rating name="read-only" value={value} readOnly />
+          <Typography variant="body1" sx={{ ml: 0.5 }}>
+            {2} Reviews
+          </Typography>
+        </>
       )}
       {type === "readable" && value === 0 && (
         <Box sx={{ display: "flex", alignItems: "center" }}>

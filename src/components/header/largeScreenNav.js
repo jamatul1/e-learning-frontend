@@ -5,8 +5,8 @@ import React from "react";
 
 const pages = [
   { label: "Home", url: "/" },
+  { label: "Popular Courses", url: "/onlyforyou" },
   { label: "Courses", url: "/courses" },
-  { label: "Your Courses", url: "/yourcourses" },
 ];
 export default function LargeScreenNav() {
   const router = useRouter();

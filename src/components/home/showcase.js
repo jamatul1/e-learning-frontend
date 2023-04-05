@@ -4,10 +4,16 @@ import { Box } from "@mui/system";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
+const ShowcaseImage = styled.img`
+  position: absolute;
+  top: 130px;
+  left: 40px;
+  width: 50vw;
+`;
 
 const Video = styled.video`
   position: absolute;
-  top: 170px;
+  top: 150px;
   left: 100px;
   width: 50vw;
 
@@ -28,7 +34,7 @@ export default function Showcase() {
   const router = useRouter();
   return (
     <Box sx={{ mt: 15, bgcolor: "#fff" }}>
-      <Video src="/videos/showcasevid.mp4" autoPlay loop />
+      <ShowcaseImage src="/imgs/certified.jpg" alt="Showcase" />
       {/* <VideoOverlay /> */}
       <Grid sx={{ zIndex: 10 }} container>
         <Grid sm={5} item></Grid>
@@ -41,7 +47,7 @@ export default function Showcase() {
               Stay Anywhere, Learn Anything !
             </Typography>
             <Button
-              onClick={() => router.push("/courses")}
+              onClick={() => router.push("/onlyforyou")}
               sx={{ mt: 3, px: 10, py: 1.5 }}
               size="large"
               variant="contained"

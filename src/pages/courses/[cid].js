@@ -10,6 +10,7 @@ import Syllabus from "./syllabus";
 import SideBar from "./sideBar";
 import InstrcutorCard from "@/components/cards/instructorCard";
 import CourseReview from "@/components/review/courseReview";
+import CustomizedAccordions from "@/components/accordion/customizedAccordions";
 const FixedButton = styled.button`
   position: fixed;
   right: 14rem;
@@ -52,6 +53,18 @@ export default function CourseDetails() {
           <Paper elevation={0} sx={{ pt: 10 }}>
             {course && <Description course={course} />}
           </Paper>
+          <Box sx={{ width: "100%", my: 15 }}>
+            <Typography
+              color={(t) => t.palette.dg}
+              fontWeight={"bold"}
+              sx={{ mb: 5 }}
+              variant="h4"
+            >
+              {" "}
+              Course Modules
+            </Typography>
+            {course && <CustomizedAccordions readable data={course.modules} />}
+          </Box>
 
           <Box sx={{ width: "70%", my: 10 }}>
             <Box sx={{ mb: 4 }}>

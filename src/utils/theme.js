@@ -24,5 +24,6 @@ export const theme = createTheme({
     g: "#636363",
     lg: "#969696",
     dg: "#313131",
+    border: "#d8d8d8",
   },
 });
