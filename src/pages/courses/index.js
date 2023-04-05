@@ -22,6 +22,7 @@ export default function CoursesPage() {
                 justifyContent: "space-between",
                 gap: 2,
                 mb: 2,
+                position: "fixed",
               }}
             >
               {" "}
@@ -39,8 +40,12 @@ export default function CoursesPage() {
             </Box>
           </Grid>
           <Grid item sm={9}>
-            <Typography sx={{ mb: 3 }} fontSize={42} variant="h2">
-              Browse Courses -
+            <Typography sx={{ mb: 1 }} fontSize={42} variant="h2">
+              A broad selection of courses
+            </Typography>
+            <Typography sx={{ mb: 3 }} variant="h6" fontSize={24}>
+              Choose from 213,000 online video courses with new additions
+              published every month
             </Typography>
 
             <Grid container spacing={2}>

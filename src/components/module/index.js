@@ -76,15 +76,17 @@ export default function Module({ id }) {
   }
 
   return (
-    <Box sx={{ px: 5 }}>
-      <Grid container spacing={3}>
+    <Box sx={{ px: 1, width: "100%" }}>
+      <Grid container spacing={2}>
         <Grid item xs={3}>
           <Paper
             sx={{
-              mt: 15,
+              mt: 10,
               borderRadius: 2,
               position: "fixed",
-              width: 365,
+              width: 350,
+              py: 3,
+              px: 2.5,
             }}
             elevation={0}
           >
@@ -97,8 +99,9 @@ export default function Module({ id }) {
         <Grid item xs={7}>
           <Paper
             sx={{
-              mt: 15,
+              mt: 10,
               ml: 3,
+              px: 2,
               borderRadius: 2,
               overflow: "hidden",
             }}
@@ -113,10 +116,12 @@ export default function Module({ id }) {
               )}
           </Paper>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={1.5}>
           <Item
             sx={{
-              mt: 15,
+              mt: 10,
+              px: 2,
+              width: 195,
             }}
             elevation={0}
           >

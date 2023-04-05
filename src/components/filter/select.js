@@ -11,14 +11,22 @@ export default function BasicSelect({
   value = 0,
   handleSelect = () => {},
 }) {
+  const [newValue, setNewValue] = React.useState(value);
   const handleChange = (event) => {
     handleSelect(event.target.value);
+    setNewValue(event.target.value);
   };
 
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl
-        sx={{ bgcolor: "#fff", border: "none" }}
+        sx={{
+          bgcolor: "#fff",
+          border: "none",
+          ".css-llrb4p-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root": {
+            background: "#fff",
+          },
+        }}
         variant="filled"
         fullWidth
       >
@@ -26,7 +34,7 @@ export default function BasicSelect({
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={value}
+          value={newValue}
           label="Age"
           onChange={handleChange}
         >

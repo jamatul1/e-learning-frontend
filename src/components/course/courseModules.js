@@ -12,12 +12,12 @@ export default function CourseModules({ data }) {
     <Wrapper>
       <Typography
         color={(t) => t.palette.dg}
-        fontWeight={300}
+        fontWeight={500}
         variant="h2"
         sx={{ mb: 5, display: "flex", gap: 2, alignItems: "center" }}
-        fontSize={32}
+        fontSize={28}
       >
-        <MobileFriendlyOutlined fontSize="40px" /> Course Modules
+        <MobileFriendlyOutlined fontSize="32px" /> Course Modules
       </Typography>
       {data && (
         <CustomizedAccordions

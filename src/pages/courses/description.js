@@ -68,7 +68,7 @@ export default function Description({ course }) {
       <Box sx={{ mb: 10 }}>
         <CourseAdVideoPlayer
           url={
-            "https://res.cloudinary.com/dws1ftsos/video/upload/v1678677221/8_Must_Know_JavaScript_Array_Methods_j0dn2f.mp4"
+            "https://res.cloudinary.com/dws1ftsos/video/upload/v1680718501/elearning/The_Creative_Javascript_Course_Trailer_rdlul1.mp4"
           }
         />
       </Box>

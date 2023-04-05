@@ -37,7 +37,11 @@ export default function DownloadFile({
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="contained" endIcon={<DownloadForOfflineIcon />}>
+        <Button
+          variant="contained"
+          sx={{ color: "#fff" }}
+          endIcon={<DownloadForOfflineIcon />}
+        >
           <Link href={lesson.url}>Download File</Link>
         </Button>
       </CardActions>

@@ -15,7 +15,7 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import { PeopleAltOutlined } from "@mui/icons-material";
 
-const drawerWidth = 300;
+const drawerWidth = 250;
 const drawerList = [
   {
     label: `Description`,
@@ -45,12 +45,16 @@ export default function CourseDrawer({ onClick }) {
       sx={{
         width: drawerWidth,
         flexShrink: 0,
+        ul: {
+          mt: 5,
+        },
         "& .MuiDrawer-paper": {
           width: drawerWidth,
           boxSizing: "border-box",
-          mt: 24.5,
-          mx: 8,
-          borderRadius: 2,
+          height: "70vh",
+          mt: 6.3,
+          mx: 1,
+          borderRadius: 1,
           // borderRight: "none",
           border: (t) => `1px solid ${t.palette.border}`,
         },

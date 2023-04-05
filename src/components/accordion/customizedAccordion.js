@@ -85,7 +85,7 @@ export default function CustomizedAccordion({
             <InfoItem
               icon={<DescriptionIcon fontSize="14px" />}
               label={
-                "Lessons :" +
+                "Lessons - " +
                 String(
                   Number(info.text) + Number(info.video) + Number(info.file)
                 )
@@ -94,11 +94,11 @@ export default function CustomizedAccordion({
 
             <InfoItem
               icon={<AssignmentLateIcon fontSize="14px" />}
-              label={"Assignments :" + info.assignment}
+              label={"Assignments - " + info.assignment}
             />
             <InfoItem
               icon={<WatchLaterIcon color="red" fontSize="14px" />}
-              label={"Duration : " + info.totalDuration + "m"}
+              label={"Duration - " + info.totalDuration + "m"}
             />
             {!disable && !readable && (
               <Box sx={{ ml: 5 }}>
@@ -138,7 +138,7 @@ function InfoItem({ icon, label }) {
     >
       {icon}
       <Typography
-        letterSpacing={0.5}
+        letterSpacing={0.8}
         fontSize={14}
         fontWeight={400}
         color={"#a0a0a0"}

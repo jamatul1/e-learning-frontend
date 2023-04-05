@@ -4,8 +4,7 @@ import { useRouter } from "next/router";
 import React from "react";
 
 const pages = [
-  { label: "Home", url: "/" },
-  { label: "Popular Courses", url: "/onlyforyou" },
+  { label: "Popular Programs", url: "/onlyforyou" },
   { label: "Courses", url: "/courses" },
 ];
 export default function LargeScreenNav() {

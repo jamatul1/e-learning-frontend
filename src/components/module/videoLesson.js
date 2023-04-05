@@ -47,7 +47,7 @@ export default function VideoLesson({
   };
 
   return (
-    <Box sx={{ mt: 3 }}>
+    <Box sx={{ mt: 2 }}>
       <Box sx={{ borderRadius: 2, overflow: "hidden", height: "495px" }}>
         <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
       </Box>

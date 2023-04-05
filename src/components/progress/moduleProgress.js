@@ -4,10 +4,16 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
-function CircularProgressWithLabel(props) {
+function CircularProgressWithLabel({ size = 40, fontSize, ...props }) {
   return (
     <Box sx={{ position: "relative", display: "inline-flex" }}>
-      <CircularProgress size={40} variant="determinate" {...props} />
+      <CircularProgress
+        color="success"
+        thickness={2.5}
+        size={size}
+        variant="determinate"
+        {...props}
+      />
       <Box
         sx={{
           top: 0,
@@ -25,6 +31,7 @@ function CircularProgressWithLabel(props) {
           variant="body2"
           component="div"
           color="text.secondary"
+          fontSize={fontSize}
         >
           {`${Math.round(props.value)}%`}
         </Typography>
@@ -42,8 +49,8 @@ CircularProgressWithLabel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-export default function ModuleProgress() {
-  const [progress, setProgress] = React.useState(50);
+export default function ModuleProgress({ size = 40, fontSize = 14 }) {
+  const [progress, setProgress] = React.useState(70);
 
   //   React.useEffect(() => {
   //     const timer = setInterval(() => {
@@ -56,5 +63,11 @@ export default function ModuleProgress() {
   //     };
   //   }, []);
 
-  return <CircularProgressWithLabel value={progress} />;
+  return (
+    <CircularProgressWithLabel
+      fontSize={fontSize}
+      size={size}
+      value={progress}
+    />
+  );
 }

@@ -1,6 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { Paper } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 import CourseDrawer from "./courseDrawer";
 import CourseAuthors from "../../components/course/courseAuthors";
 import CourseDescription from "./courseDescription";
@@ -9,6 +9,7 @@ import CourseQuestions from "./courseQuestions";
 import CourseSyllabus from "./courseSyllabus";
 import { courses } from "@/data/courses";
 import { useCourseContext } from "@/contexts/courseContext";
+import CourseProgress from "./courseProgress";
 const getSubCourseComp = (type, data = "") => {
   const comps = {
     authors: <CourseAuthors data={data} />,
@@ -29,10 +30,22 @@ export default function Course() {
   };
 
   return (
-    <Box sx={{ ml: 7, display: "flex", gap: 2 }}>
+    <Box sx={{ width: "100%", display: "flex", gap: 1 }}>
       <CourseDrawer onClick={handleChange} />
-      <Paper elevation={0} sx={{ mt: 10 }}>
+      <Paper
+        elevation={0}
+        sx={{
+          mt: 10.1,
+          ml: 2,
+          height: "87vh",
+          width: "90%",
+          overflowY: "scroll",
+        }}
+      >
         {getSubCourseComp(selected, course)}
+      </Paper>
+      <Paper elevation={0} sx={{ mt: 10.1, width: 420, height: 370, mx: 1 }}>
+        <CourseProgress />
       </Paper>
     </Box>
   );
